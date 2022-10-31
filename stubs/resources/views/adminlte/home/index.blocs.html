@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3<!-- data-val=$headline['label'] data-prefix=' | ' --></title>
 
-<!-- data-include='../base/include/css.html' -->
+<!-- data-include="../base/include/css.html" -->
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -18,7 +18,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-<!-- data-include='../base/include/navibar.html' -->
+<!-- data-include="../base/include/navibar.html" -->
         </ul>
 
         <!-- Right navbar links -->
@@ -82,7 +82,7 @@
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-<!-- data-include='../base/include/navigation.html' -->
+<!-- data-include="../base/include/navigation.html" -->
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -104,7 +104,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-<!-- data-include='../base/include/breadcrumb.html' -->
+<!-- data-include="../base/include/breadcrumb.html" -->
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -122,14 +122,6 @@
                                 <h5 class="m-0">Dashboard</h5>
                             </div>
                             <div class="card-body" id='dashboard_user'>
-
-<!-- data-include="../autoinclude/jqplot.html" -->
-<script type='text/javascript'>
-$(function(){
-    $('#dashboard_user').load('{{ route('dashboard') }}');
-});
-</script>
-
                             </div>
                         </div>
                     </div>
@@ -163,8 +155,13 @@ $(function(){
 </div>
 <!-- ./wrapper -->
 
-<!-- data-include='../base/include/script.html' -->
-<!-- data-include="autoinclude" -->
+<!-- data-include="../base/include/script.html" -->
+<!-- data-include="../autoinclude/jqplot.html" -->
+<script type='text/javascript'>
+$(function(){
+    $('#dashboard_user').load('{{ route('dashboard') }}');
+});
+</script>
 
 </body>
 </html>
