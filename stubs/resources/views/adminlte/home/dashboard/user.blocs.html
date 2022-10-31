@@ -8,19 +8,13 @@
 
 <!-- data-include='jqplot_2bar_1line' -->
 
-<div class='panel panel-primary'>
-	<div class='panel-heading'>
-		<h2 class='panel-title'><!-- data-lang='template:admin_top_user_title' --></h2>
+	<div class='card-header'>
+		<h5 class="m-0"><!-- data-lang='template:admin_top_user_title' --></h5>
 	</div>
-	<div class='panel-body'>
-		<span class='text-primary'>
-			<small><!-- data-lang='template:admin_top_user_number' --></small>
-		</span>
+	<div class="card-body">
+		<!-- data-lang='template:admin_top_user_number' -->
 		<span class='badge' data-val=$current></span>
-		<span class='text-primary'>
-			<small data-val=$update data-convert='date:"Y/m/d H:i:s"'></small>
-		</span>
+		<small data-val=$update data-convert='date:"Y/m/d H:i:s"'></small>
 		<!-- data-attribute='id' data-val=$graph_id -->
 		<div></div>
 	</div>
-</div>
