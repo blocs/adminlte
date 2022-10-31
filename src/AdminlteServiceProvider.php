@@ -5,7 +5,7 @@ namespace Blocs;
 use App\Console\Commands\BlocsAdminlte;
 use Illuminate\Support\ServiceProvider;
 
-class AdminiteServiceProvider extends ServiceProvider
+class AdminlteServiceProvider extends ServiceProvider
 {
     public function register()
     {
