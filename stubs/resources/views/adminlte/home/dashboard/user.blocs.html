@@ -12,9 +12,11 @@
 		<h5 class="m-0"><!-- data-lang='template:admin_top_user_title' --></h5>
 	</div>
 	<div class="card-body">
-		<!-- data-lang='template:admin_top_user_number' -->
-		<span class='badge' data-val=$current></span>
-		<small data-val=$update data-convert='date:"Y/m/d H:i:s"'></small>
+		<h6 class="card-title">
+			<!-- data-lang='template:admin_top_user_number' -->
+			<span class='badge badge-info' data-val=$current></span>
+		</h6>
+		<p class="card-text" data-val=$update data-convert='date:"Y/m/d H:i:s"'></p>
 		<!-- data-attribute='id' data-val=$graph_id -->
 		<div></div>
 	</div>
