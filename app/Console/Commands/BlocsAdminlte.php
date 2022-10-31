@@ -9,10 +9,13 @@ class BlocsAdminlte extends Command
     protected $signature = 'blocs:adminlte';
     protected $description = 'Deploy blocs/adminlte package';
 
+    private static $root_dir;
+    private static $stub_dir;
+
     public function __construct()
     {
-        define('ROOT_DIR', str_replace(DIRECTORY_SEPARATOR, '/', realpath(dirname(__FILE__).'/../../../../../../')));
-        define('STUB_DIR', str_replace(DIRECTORY_SEPARATOR, '/', realpath(dirname(__FILE__).'/../../../')));
+        self::$root_dir = str_replace(DIRECTORY_SEPARATOR, '/', realpath(dirname(__FILE__).'/../../../../../../'));
+        self::$stub_dir = str_replace(DIRECTORY_SEPARATOR, '/', realpath(dirname(__FILE__).'/../../../'));
 
         parent::__construct();
     }
@@ -21,7 +24,7 @@ class BlocsAdminlte extends Command
     {
         /* アップデート状況把握のため更新情報を取得 */
 
-        $file_loc = ROOT_DIR.'/storage/blocs_update.json';
+        $file_loc = self::$root_dir.'/storage/blocs_update.json';
         if (is_file($file_loc)) {
             $update_json_data = json_decode(file_get_contents($file_loc), true);
         } else {
@@ -31,7 +34,7 @@ class BlocsAdminlte extends Command
         /* ディレクトリを配置 */
 
         foreach (['public', 'resources'] as $target_dir) {
-            $update_json_data = self::_copy_dir(STUB_DIR.'/'.$target_dir, ROOT_DIR.'/'.$target_dir, $update_json_data);
+            $update_json_data = self::_copy_dir(self::$stub_dir.'/'.$target_dir, self::$root_dir.'/'.$target_dir, $update_json_data);
             echo <<< END_of_TEXT
 Copy "{$target_dir}"
 
@@ -71,7 +74,7 @@ END_of_TEXT;
     {
         $original_file = str_replace(DIRECTORY_SEPARATOR, '/', realpath($original_file));
         $new_contents = file_get_contents($original_file);
-        $file_key = substr($target_file, strlen(ROOT_DIR));
+        $file_key = substr($target_file, strlen(self::$root_dir));
 
         if (!is_file($target_file) || !filesize($target_file)) {
             // コピー先にファイルがない
