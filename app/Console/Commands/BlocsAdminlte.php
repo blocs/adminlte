@@ -28,32 +28,9 @@ class BlocsAdminlte extends Command
             $update_json_data = [];
         }
 
-        /* ルーティング設定 */
-
-        $blocs_routes_loc = STUB_DIR.'/routes/web.php';
-        $laravel_routes_loc = ROOT_DIR.'/routes/web.php';
-        if (is_file($blocs_routes_loc) && $laravel_routes_loc) {
-            $laravel_routes = file_get_contents($laravel_routes_loc);
-            if (false === strpos($laravel_routes, 'Auth::routes();')) {
-                // ルーティングを追加
-                $blocs_routes = file_get_contents($blocs_routes_loc);
-                file_put_contents($laravel_routes_loc, "\n".$blocs_routes, FILE_APPEND);
-            }
-        }
-
-        /* モデルを置き換え */
-
-        $laravel_user_loc = ROOT_DIR.'/app/User.php';
-        if (is_file($laravel_user_loc)) {
-            $laravel_user = file_get_contents($laravel_user_loc);
-            if (false === strpos($laravel_user, 'SoftDeletes;')) {
-                unlink($laravel_user_loc);
-            }
-        }
-
         /* ディレクトリを配置 */
 
-        foreach (['app', 'config', 'database', 'public', 'resources'] as $target_dir) {
+        foreach (['public', 'resources'] as $target_dir) {
             $update_json_data = self::_copy_dir(STUB_DIR.'/'.$target_dir, ROOT_DIR.'/'.$target_dir, $update_json_data);
             echo <<< END_of_TEXT
 Copy "{$target_dir}"
