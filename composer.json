@@ -1,0 +1,36 @@
+{
+    "name": "blocs/adminlte",
+    "type": "library",
+    "description": "A package for adminLTE",
+    "keywords": [
+        "PHP",
+        "Package",
+        "Blocs",
+        "AdminLTE",
+        "Laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LINEAR JAPAN Co.,Ltd.",
+            "email": "admin@linear-jp.biz",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "blocs/admin": "@dev",
+        "laravel/ui": "@dev"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Blocs\\AdminlteServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Blocs\\": "src\/"
+        }
+    }
+}
