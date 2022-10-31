@@ -1,9 +1,7 @@
-            <li class="nav-item d-none d-sm-inline-block" data-exist=$breadcrumb>
-                <a href="/" class="nav-link">トップ</a>
-            </li>
-			<li class="nav-item d-none d-sm-inline-block" data-repeat=$breadcrumb>
-                <!-- data-attribute='href' data-val=$url -->
-                <a data-val=$label class="nav-link" data-exist=$url></a>
+			                <!-- data-attribute="class" data-val="active" data-none=$url >
+                            <li class="breadcrumb-item" data-repeat=$breadcrumb>
+                            	<!-- data-attribute='href' data-val=$url -->
+                            	<a data-val=$label data-exist=$url></a>
 
-                <a href="#" data-val=$label class="nav-link" data-none=$url></a>
-			</li>
+                            	<!-- data-val=$label data-none=$url -->
+                            </li>
