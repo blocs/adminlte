@@ -1,5 +1,5 @@
 {
-    "name": "blocs/adminlte",
+    "name": "blocs\/adminlte",
     "type": "library",
     "description": "A package for adminLTE",
     "keywords": [
@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "blocs/admin": "@dev",
-        "laravel/ui": "@dev"
+        "blocs\/admin": "@dev",
+        "laravel\/ui": "@dev"
     },
     "extra": {
         "laravel": {
