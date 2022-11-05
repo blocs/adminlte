@@ -33,10 +33,20 @@ class BlocsAdminlte extends Command
 
         /* ディレクトリを配置 */
 
-        foreach (['public', 'resources'] as $target_dir) {
+        $files = scandir(self::$stub_dir);
+        foreach ($files as $file) {
+            if ('.' == substr($file, 0, 1) && '.gitkeep' != $file && '.htaccess' != $file) {
+                continue;
+            }
+
+            if (!is_dir(self::$stub_dir.'/'.$file)) {
+                continue;
+            }
+
+            $target_dir = $file;
             $update_json_data = self::_copy_dir(self::$stub_dir.'/'.$target_dir, self::$root_dir.'/'.$target_dir, $update_json_data);
             echo <<< END_of_TEXT
-Copy "{$target_dir}"
+Deploy "{$target_dir}"
 
 END_of_TEXT;
         }
