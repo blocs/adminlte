@@ -18,7 +18,7 @@ class AdminlteServiceProvider extends ServiceProvider
     public function registerBlocsCommand()
     {
         $this->app->singleton('command.blocs.adminlte', function ($app) {
-            return new \App\Console\Commands\Blocs('blocs:adminlte', 'Deploy blocs/adminlte package');
+            return new \App\Console\Commands\Blocs('blocs:adminlte', 'Deploy blocs/adminlte package', __FILE__);
         });
 
         $this->commands('command.blocs.adminlte');
