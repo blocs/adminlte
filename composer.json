@@ -1,7 +1,7 @@
 {
     "name": "blocs\/adminlte",
     "type": "library",
-    "description": "A package for adminLTE",
+    "description": "The package for AdminLTE",
     "keywords": [
         "PHP",
         "Package",
