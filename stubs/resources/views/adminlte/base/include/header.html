@@ -16,9 +16,9 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @php isset($notice_category) && $notice_category === 'error' && $notice_category = 'danger' @endphp
-        <!-- data-attribute="class" data-val="alert alert-{$notice_category}" -->
-        <div data-exist=$notice_category><span data-val=$notice_message></span></div>
+        @php isset($noticeCategory) && $noticeCategory === 'error' && $noticeCategory = 'danger' @endphp
+        <!-- data-attribute="class" data-val="alert alert-{$noticeCategory}" -->
+        <div data-exist=$noticeCategory><span data-val=$noticeMessage></span></div>
 
         <!-- Content Header (Page header) -->
         <div class="content-header">
