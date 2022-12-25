@@ -1,24 +1,44 @@
-<!-- data-assign=$graphLegendBar1 data-lang='template:admin_top_user_legend_registered' -->
-<!-- data-assign=$graphLegendBar2 data-lang='template:admin_top_user_legend_deleted' -->
-<!-- data-assign=$graphLegendLine1 data-lang='template:admin_top_user_legend_accumulated' -->
+<!-- data-assign=$graphLegendBar1 data-lang="template:admin_top_user_legend_registered" -->
+<!-- data-assign=$graphLegendBar2 data-lang="template:admin_top_user_legend_deleted" -->
+<!-- data-assign=$graphLegendLine1 data-lang="template:admin_top_user_legend_accumulated" -->
 
-<!-- data-assign=$graphJson data-val=$json -->
-<!-- data-assign=$graphYaxisMax data-val=$yaxisMax -->
-<!-- data-assign=$graphY2axisMax data-val=$y2axisMax -->
+<!-- data-include="chartjs_2bar_1line" -->
 
-<!-- data-include='jqplot_2bar_1line' -->
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="info-box">
+					<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+					<div class="info-box-content">
+						<span class="info-box-number" data-val=$current data-convert="number"></span>
+						<span class="info-box-text" data-val=$update data-convert='date:"Y/m/d H:i:s"'></span>
+					</div>
+				</div>
+			</div>
 
-	<div class='card-header'>
-		<h5 class="m-0"><!-- data-lang='template:admin_top_user_title' --></h5>
-	</div>
-	<div class="card-body">
-		<!-- data-attribute='id' data-val=$graphId -->
-		<div></div>
-	</div>
-	<div class='card-header text-right'>
-		<div class='card-title'>
-			<!-- data-lang='template:admin_top_user_number' -->
-			<span class='badge badge-primary' data-val=$current></span>
+			<div class="col-lg-12">
+				<div class="card card-primary">
+					<div class='card-header'>
+						<h3 class="card-title" data-lang="template:admin_top_user_number"></h3>
+
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool" data-card-widget="collapse">
+								<i class="fas fa-minus"></i>
+							</button>
+							<button type="button" class="btn btn-tool" data-card-widget="remove">
+								<i class="fas fa-times"></i>
+							</button>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="chart">
+							<!-- data-attribute='id' data-val=$graphId -->
+							<canvas style="min-height: 250px; height: 250px; max-height: 300px; max-width: 100%;"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- data-val=$update data-convert='date:"Y/m/d H:i:s"' -->
 	</div>
+</div>
