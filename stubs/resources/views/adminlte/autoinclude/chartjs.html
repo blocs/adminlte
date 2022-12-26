@@ -15,24 +15,24 @@
             {
                 type: "line",
                 label: "{{ $graphLegendLine1 }}",
-                backgroundColor: {{ $chartjsColor }}[0],
-                borderColor: {{ $chartjsColor }}[0],
+                backgroundColor: {{ $chartjsColor }}[2],
+                borderColor: {{ $chartjsColor }}[2],
                 data: <!-- data-val=$graphDataLine1 data-convert='raw' -->,
                 yAxisID: "y2"
             },
             {
                 type: "bar",
                 label: "{{ $graphLegendBar1 }}",
-                backgroundColor: {{ $chartjsColor }}[1],
-                borderColor: {{ $chartjsColor }}[1],
+                backgroundColor: {{ $chartjsColor }}[0],
+                borderColor: {{ $chartjsColor }}[0],
                 data: <!-- data-val=$graphDataBar1 data-convert='raw' -->,
                 yAxisID: "y1"
             },
             {
                 type: "bar",
                 label: "{{ $graphLegendBar2 }}",
-                backgroundColor: {{ $chartjsColor }}[2],
-                borderColor: {{ $chartjsColor }}[2],
+                backgroundColor: {{ $chartjsColor }}[1],
+                borderColor: {{ $chartjsColor }}[1],
                 data: <!-- data-val=$graphDataBar2 data-convert='raw' -->,
                 yAxisID: "y1"
             }
