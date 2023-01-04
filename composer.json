@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "blocs\/admin": "@dev",
-        "laravel\/ui": "@dev"
+        "blocs\/admin": "*",
+        "laravel\/ui": "*"
     },
     "extra": {
         "laravel": {
